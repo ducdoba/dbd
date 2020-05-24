@@ -13,7 +13,7 @@ var scannerConfig = function(){
 		console.log(e.detail); //Prints "Scanner is ready."
 		
 		//can use mwbScanner.* methods now
-		mwbScanner.setIcon("cognex_icon");
+		mwbScanner.setIcon("wasm_license_20334.png");
 	});
 	
 	
