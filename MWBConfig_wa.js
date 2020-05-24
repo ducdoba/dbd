@@ -68,13 +68,13 @@ var scannerConfig = function(){
 		,{"method" : "MWBsetLevel", "value" : [2]} //3 will try to scan harder than the default which is 2
 		,{"method" : "MWBsetActiveParser", "value" : [mw_c.MWP_PARSER_MASK_NONE]}
 		//,{"method" : "MWBenableFlash", "value" : [true]}
-		//,{"method" : "MWBenableZoom", "value" : [true]}
+		,{"method" : "MWBenableZoom", "value" : [true]}
 		//,{"method" : "MWBsetOverlayMode", "value" : [mw_c.OverlayModeImage]}
 		//,{"method" : "MWBsetBlinkingLineVisible", "value" : [true]}
 		//,{"method" : "MWBsetPauseMode", "value" : [mw_c.PM_STOP_BLINKING]}
 		//,{"method" : "MWBusePartialScanner", "value" : [false]}
 		//,{"method" : "MWBenableHiRes", "value" : [true]}
-		//,{"method" : "MWBuseFrontCamera", "value" : [false]}
+		,{"method" : "MWBuseFrontCamera", "value" : [false]}
 		//,{"method" : "MWBcloseScannerOnDecode", "value" : [false]}
 		,{"method" : "MWBsetDecoderTimeout", "value" : [30]} //10-60
 		,{"method" : "MWBsetDpsLimit", "value" : [2]} //1-30
