@@ -40,7 +40,7 @@ var scannerConfig = function(){
 		}
 	);
 	
-	mwbScanner.setIcon("/wasm_license_20334.png");
+	mwbScanner.setIcon("https://raw.githubusercontent.com/ducdoba/dbd/master/wasm_license_20334.png");
 
     // Some predefined settings, comment out the ones you don't want enabled
     var mw_c = mwbScanner.getConstants(),
