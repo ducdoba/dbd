@@ -1,44 +1,38 @@
-<html>
-    <head>
-        <title>Tesseract-JS Demo</title>
-		<meta charset="UTF-8">
-		<meta name="description" content="A simple demonstration of Tesseract JS">
-		<meta name="keywords" content="Tesseract,OCR,JavaScript">
-		<meta name="author" content="Akshay Khale">
-    </head>
-    <body>
-        <label for="input_image">Choose an Image File:</label>
-        <input type="file" id="input_image" name="input_image"/>
-        <br />
-        <br />
-        <textarea id="image-text"></textarea>
-		<br/><br/>
-		<progress id="progressbar" min="0" max="1" value="0"/>
-    </body>
-	<script src='https://cdn.rawgit.com/naptha/tesseract.js/1.0.10/dist/tesseract.js'></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function(){
-            var input_image = document.getElementById('input_image');
-            input_image.addEventListener('change', handleInputChange);
-        });
+<!doctype html>
+<html lang="en-us">
+  <head>
 
-        function handleInputChange(event){
-            var input = event.target;
-            var file = input.files[0];
-            console.log(file);
-            Tesseract.recognize(file)
-                .progress(function(message){
-					document.getElementById('progressbar').value = message.progress;
-                    console.log(message);
-                })
-                .then(function(result){
-                    var contentArea = document.getElementById('image-text');
-					contentArea.innerHTML = result.text;
-                    console.log(result);
-                })
-                .catch(function(err){
-                    console.error(err);
-                });
-        }
-    </script>
+<meta http-equiv='cache-control' content='no-cache'>
+<meta http-equiv='expires' content='0'>
+<meta http-equiv='pragma' content='no-cache'>
+
+<!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+<!--<meta name="viewport" content="initial-scale=1, maximum-scale=1">-->
+<!--<meta name="mobile-web-app-capable" content="yes">-->
+
+<meta id="viewport" name="viewport" content="initial-scale=0.75, user-scalable=0, minimum-scale=0.75, maximum-scale=0.75" />
+
+<!--viewport above user-scalable=0;-->
+
+    <title>MWBScanner demo</title>
+  </head>
+  <body>
+	
+<form style="width: 100%; text-align: center;">
+    <input type="button" value="Scan fullscreen" onclick="mwbScanner.startScanning()" style="font-size: 12px; width: 105px; height: 30px; margin-top: 10px;" />
+    <input type="button" value="Scan in view" onclick="mwbScanner.startScanning(function(res){console.log(res);}, 5,5,90,50)" style="font-size: 12px; width: 105px; height: 30px; margin-top: 10px;" />
+    <input type="button" value="Scan image" onclick="mwbScanner.scanImage('test_img.png')" style="font-size: 12px; width: 105px; height: 30px; margin-top: 10px;" />
+    <input type="button" value="Pause/Resume" onclick="mwbScanner.togglePauseResume()" style="font-size: 12px; width: 105px; height: 30px; margin-top: 10px;" />
+    <input type="button" value="Close" onclick="mwbScanner.closeScanner()" style="font-size: 12px; width: 105px; height: 30px; margin-top: 10px;" />
+    <input type="button" value="Flash" onclick="mwbScanner.toggleFlash()" style="font-size: 12px; width: 105px; height: 30px; margin-top: 10px;" />
+    <input type="button" value="Zoom" onclick="mwbScanner.toggleZoom()" style="font-size: 12px; width: 105px; height: 30px; margin-top: 10px;" />
+</form>
+
+<!--or use version for js scripts and change them everytime-->
+    <script type="text/javascript" src="MWBScanner_wa.js"></script>
+    <script type="text/javascript" src="MWBConfig_wa.js"></script>
+    <script type="text/javascript" src="sdk_modular.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+    <script async type="text/javascript" src="index.js"></script>
+  </body>
 </html>
