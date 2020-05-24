@@ -46,13 +46,13 @@ var scannerConfig = function(){
     var mw_c = mwbScanner.getConstants(),
 	settings = [
 		{"method" : "MWBsetActiveCodes", "value" : [
-			mw_c.MWB_CODE_MASK_QR | 
-			mw_c.MWB_CODE_MASK_DM | 
+			//mw_c.MWB_CODE_MASK_QR | 
+			//mw_c.MWB_CODE_MASK_DM | 
 			//mw_c.MWB_CODE_MASK_RSS | 
-			//mw_c.MWB_CODE_MASK_39 | 
-			mw_c.MWB_CODE_MASK_EANUPC | 
-			mw_c.MWB_CODE_MASK_128 | 
-			mw_c.MWB_CODE_MASK_PDF | 
+			mw_c.MWB_CODE_MASK_39 | 
+			// mw_c.MWB_CODE_MASK_EANUPC | 
+			// mw_c.MWB_CODE_MASK_128 | 
+			// mw_c.MWB_CODE_MASK_PDF | 
 			//mw_c.MWB_CODE_MASK_AZTEC | 
 			//mw_c.MWB_CODE_MASK_25 | 
 			//mw_c.MWB_CODE_MASK_93 | 
@@ -79,7 +79,7 @@ var scannerConfig = function(){
 		,{"method" : "MWBsetDecoderTimeout", "value" : [30]} //10-60
 		,{"method" : "MWBsetDpsLimit", "value" : [2]} //1-30
 		//,{"method" : "MWBsetScanningRect", "value" : [mw_c.MWB_CODE_MASK_25, 2, 2, 96, 96]}
-		//,{"method" : "MWBsetScanningRect", "value" : [mw_c.MWB_CODE_MASK_39, 2, 2, 96, 96]}
+		,{"method" : "MWBsetScanningRect", "value" : [mw_c.MWB_CODE_MASK_39, 2, 2, 96, 96]}
 		//,{"method" : "MWBsetScanningRect", "value" : [mw_c.MWB_CODE_MASK_93, 2, 2, 96, 96]}
 		//,{"method" : "MWBsetScanningRect", "value" : [mw_c.MWB_CODE_MASK_128, 2, 2, 96, 96]}
 		//,{"method" : "MWBsetScanningRect", "value" : [mw_c.MWB_CODE_MASK_AZTEC, 20, 2, 60, 96]}
@@ -96,7 +96,7 @@ var scannerConfig = function(){
 		//,{"method" : "MWBsetScanningRect", "value" : [mw_c.MWB_CODE_MASK_POSTAL, 2, 2, 96, 96]}
 		//,{"method" : "MWBsetScanningRect", "value" : [mw_c.MWB_CODE_MASK_TELEPEN, 2, 2, 96, 96]}
 		//,{"method" : "MWBsetMinLength", "value" : [mw_c.MWB_CODE_MASK_25, 5]}
-		//,{"method" : "MWBsetMinLength", "value" : [mw_c.MWB_CODE_MASK_39, 5]}
+		,{"method" : "MWBsetMinLength", "value" : [mw_c.MWB_CODE_MASK_39, 5]}
 		//,{"method" : "MWBsetMinLength", "value" : [mw_c.MWB_CODE_MASK_MSI, 5]}
 		//,{"method" : "MWBsetMinLength", "value" : [mw_c.MWB_CODE_MASK_CODABAR, 5]}
 		//,{"method" : "MWBsetMinLength", "value" : [mw_c.MWB_CODE_MASK_11, 5]}
